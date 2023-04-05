@@ -2,6 +2,6 @@
 # Generator token: 10BE3573-1514-4C36-9D1C-5A225CD40393
 
 .score <- function(Sin, yin, xin, xsin, Gin, scorein, alphain) {
-    .Call('_ProbReco_score', PACKAGE = 'ProbReco', Sin, yin, xin, xsin, Gin, scorein, alphain)
+    .Call(`_ProbReco_score`, Sin, yin, xin, xsin, Gin, scorein, alphain)
 }
 

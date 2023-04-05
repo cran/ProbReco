@@ -6,6 +6,11 @@
 
 using namespace Rcpp;
 
+#ifdef RCPP_USE_GLOBAL_ROSTREAM
+Rcpp::Rostream<true>&  Rcpp::Rcout = Rcpp::Rcpp_cout_get();
+Rcpp::Rostream<false>& Rcpp::Rcerr = Rcpp::Rcpp_cerr_get();
+#endif
+
 // score
 Rcpp::List score(Rcpp::NumericMatrix Sin, Rcpp::NumericVector yin, Rcpp::NumericMatrix xin, Rcpp::NumericMatrix xsin, Rcpp::NumericVector Gin, int scorein, double alphain);
 RcppExport SEXP _ProbReco_score(SEXP SinSEXP, SEXP yinSEXP, SEXP xinSEXP, SEXP xsinSEXP, SEXP GinSEXP, SEXP scoreinSEXP, SEXP alphainSEXP) {
